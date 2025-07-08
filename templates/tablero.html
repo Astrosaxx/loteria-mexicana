@@ -10,15 +10,13 @@
     <div class="tablero">
     {% set index = 0 %}
     {% for i in range(filas) %}
-        <div class="fila">
-            {% for j in range(columnas) %}
-                {% set index = i * columnas + j %}
-                {% set color = ['azul', 'amarillo', 'rosa'][index % 3] %}
-                <div class="carta {{ color }}">
-                    <p class="p">{{ cartas[index] }}</p>
-                </div>
-            {% endfor %}
-        </div>
+        {% for j in range(columnas) %}
+            {% set index = i * columnas + j %}
+            {% set color = ['azul', 'amarillo', 'rosa'][index % 3] %}
+            <div class="carta {{ color }}">
+            <p class="p">{{ cartas[index] }}</p>
+            </div>
+        {% endfor %}
     {% endfor %}
 
     </div>

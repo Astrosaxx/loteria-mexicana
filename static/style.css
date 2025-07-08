@@ -7,7 +7,10 @@ body {
     font-family: Arial, sans-serif;
     text-align: center;
     background-color: #f2f2f2;
-    max-width: 100vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 
 h1 {
@@ -15,23 +18,16 @@ h1 {
 }
 
 .tablero {
-    max-width: 100vw;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     gap: 1rem;
-}
-
-.fila {
-    display: flex;
-    justify-content: center;
-    gap: 1rem;
+    max-width: 90%;
+    justify-items: center;
 }
 
 .carta {
     aspect-ratio: 1 / 1;
-    width: 100px;
+    width: 200px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -41,6 +37,7 @@ h1 {
     cursor: pointer;
     transition: 0.2s ease-in-out;
     padding: 1rem;
+    margin-top: 1rem;
 }
 
 .p{
@@ -53,6 +50,7 @@ h1 {
 
 .carta:hover{
     transform: scale(1.1);
+    box-shadow: 4px 4px 12px rgba(0, 0, 0, 0.3);
 }
 
 /** Colores de cartas */
